@@ -1,0 +1,100 @@
+//@import url("https://fonts.googleapis.com/css2?family=Tiny5&display=swap");
+
+.card {
+  font-family: "Open Sans", serif;
+  width: 340px;
+  height: 495px;
+  background: linear-gradient(
+    180deg,
+    rgba(223, 230, 236, 1) 0%,
+    rgba(211, 217, 202, 1) 100%
+  );
+  border-radius: 12px;
+  border: 4px solid black;
+  padding: 3px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all 0.5s;
+  &:hover {
+    transform: rotate(180deg);
+  }
+
+  .heroInfo {
+    text-align: center;
+    height: 100%;
+    font-size: 24px;
+    line-height: 24px;
+    flex: 1;
+    min-height: 70px;
+    display: flex;
+    position: relative;
+
+    .imgHero {
+      height: 66px;
+      width: 40px;
+    }
+
+    .attack {
+      width: 48px;
+      height: 47px;
+      -webkit-text-stroke: 1px white;
+    }
+
+    .sheet {
+      width: 41px;
+      height: 44px;
+      -webkit-text-stroke: 1px white;
+    }
+
+    .heroLabel {
+      position: absolute;
+      top: -10px;
+      left: 46px;
+      width: 42px;
+      height: 43px;
+    }
+  }
+
+  .ability {
+    min-height: 62px;
+    border-radius: 12px;
+    border: 5px solid black;
+    padding: 2px;
+    display: flex;
+    gap: 4px;
+    justify-content: space-between;
+    align-items: center;
+
+    &.Vanguard {
+      background: #eececb;
+      border-color: #a22b17;
+    }
+
+    &.Flank {
+      background: #acd37b;
+      border-color: #354c1a;
+    }
+
+    &.Rear {
+      background: #99c9e1;
+      border-color: #417599;
+    }
+
+    &.Order {
+      background: #d5bbcf;
+      border-color: #591648;
+    }
+
+    .images {
+      flex: 1;
+    }
+
+    .discription {
+      font-size: 10px;
+      text-align: center;
+      flex: 1;
+    }
+  }
+}
+//-webkit-text-stroke: 1px white;
