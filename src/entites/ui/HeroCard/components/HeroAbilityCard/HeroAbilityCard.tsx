@@ -7,7 +7,7 @@ export enum AbilityTypeEnum {
   "Order" = "Order",
 }
 
-export const HeroAbilityCard = ({
+export const AbilityHeroCard = ({
   type,
   textAbility = <>Пусто</>,
   iconsAbility = <>Пусто</>,
