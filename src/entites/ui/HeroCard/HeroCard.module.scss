@@ -2,10 +2,11 @@
 //-webkit-text-stroke: 1px white;
 .wrapper {
   position: relative;
+  width: max-content;
   .flip_card {
     background-color: transparent;
-    width: 330px;
-    height: 495px;
+    width: 17.188vw;
+    height: 25.781vw;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
 
     .flip_card_inner {
@@ -31,57 +32,57 @@
           rgba(223, 230, 236, 1) 0%,
           rgba(211, 217, 202, 1) 100%
         );
-        border-radius: 12px;
-        border: 4px solid black;
-        padding: 3px 4px;
+        border-radius: 0.625vw;
+        border: 0.208vw solid black;
+        padding: 0.156vw 0.208vw;
         display: flex;
         flex-direction: column;
-        gap: 4px;
+        gap: 0.208vw;
         transition: all 0.5s;
 
         .heroInfo {
           text-align: center;
           height: 100%;
-          font-size: 24px;
-          line-height: 24px;
+          font-size: 1.25vw;
+          line-height: 1.25vw;
           flex: 1;
-          min-height: 70px;
+          min-height: 3.646vw;
           display: flex;
           position: relative;
 
           .imgHero {
-            height: 66px;
-            width: 40px;
+            height: 3.438vw;
+            width: 2.083vw;
           }
 
           .attack {
-            width: 48px;
-            height: 47px;
-            -webkit-text-stroke: 1px white;
+            width: 2.5vw;
+            height: 2.448vw;
+            -webkit-text-stroke: 0.052vw white;
           }
 
           .sheet {
-            width: 41px;
-            height: 44px;
-            -webkit-text-stroke: 1px white;
+            width: 2.135vw;
+            height: 2.292vw;
+            -webkit-text-stroke: 0.052vw white;
           }
 
           .heroLabel {
             position: absolute;
-            top: -10px;
-            left: 46px;
-            width: 42px;
-            height: 43px;
+            top: -0.521vw;
+            left: 2.396vw;
+            width: 2.188vw;
+            height: 2.24vw;
           }
         }
 
         .ability {
-          min-height: 62px;
-          border-radius: 12px;
-          border: 5px solid black;
-          padding: 2px;
+          min-height: 3.229vw;
+          border-radius: 0.625vw;
+          border: 0.26vw solid black;
+          padding: 0.104vw;
           display: flex;
-          gap: 4px;
+          gap: 0.208vw;
           justify-content: space-between;
           align-items: center;
 
@@ -105,12 +106,12 @@
             border-color: #591648;
           }
 
-          .images {
+          .iconsAbility {
             flex: 1;
           }
 
           .discription {
-            font-size: 10px;
+            font-size: 0.521vw;
             text-align: center;
             flex: 1;
           }
@@ -119,13 +120,30 @@
 
       .backCard {
         transition: all 0.5s;
-        background-image: url("../../assets/card/Shirt1.png");
-        height: 495px;
-        width: 330px;
+        width: 17.188vw;
+        height: 25.781vw;
         top: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(226, 186, 186, 1) 50%,
+          rgba(148, 128, 129, 1) 100%
+        );
         transform: rotateY(180deg);
-        background-position: center;
-        background-size: cover;
+        border-radius: 0.625vw;
+        border: 0.208vw solid black;
+        padding: 0.156vw 0.208vw;
+        display: flex;
+        flex-direction: column;
+
+        .backCardBottom {
+          display: flex;
+          position: absolute;
+          bottom: 0.781vw;
+          left: 0.677vw;
+          justify-content: space-between;
+          width: calc(100% - 1.354vw);
+        }
       }
     }
 
@@ -146,16 +164,17 @@
 
   .show {
     width: 100%;
-    padding-bottom: 5px;
+    padding-bottom: 0.26vw;
     opacity: 0;
     position: absolute;
-    top: -30px;
+    top: -1.563vw;
     transition: all 0.3s;
 
     .settingsCard {
+      width: 100%;
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 0.208vw;
       justify-content: space-between;
 
       div {

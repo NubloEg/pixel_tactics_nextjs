@@ -9,12 +9,12 @@ export const HeroInfo = () => {
   return (
     <div className={s.heroInfo}>
       <Image className={s.imgHero} src={hero} alt="hero" />
-      <div className="flex flex-1 flex-col pl-[50px]">
+      <div className="flex flex-1 flex-col pl-[2.604vw]">
         <div className="flex ">
           <Image className={s.heroLabel} src={heroLabel} alt="heroLabel" />
-          <span className="text-[24px] leading-[18px]">Рыцарь</span>
+          <span className="text-[1.25vw] leading-[0.938vw]">Рыцарь</span>
         </div>
-        <div className="flex flex-1 items-center gap-[12px] justify-end ">
+        <div className="flex flex-1 items-center gap-[0.625vw] justify-end ">
           <div
             className={`${s.attack} relative flex items-center justify-center`}
           >
@@ -23,7 +23,7 @@ export const HeroInfo = () => {
               src={attack}
               alt="attack"
             />
-            <span className="z-[2] text-[40px] leading-[25px] text-[#CA2E21] font-bold">
+            <span className="z-[2] text-[2.083vw] leading-[1.302vw] text-[#CA2E21] font-bold">
               3
             </span>
           </div>
@@ -35,7 +35,7 @@ export const HeroInfo = () => {
               src={sheet}
               alt="sheet"
             />
-            <span className="z-[2] text-[40px] leading-[25px] text-[#24377D] font-bold ">
+            <span className="z-[2] text-[2.083vw] leading-[1.302vw] text-[#24377D] font-bold ">
               10
             </span>
           </div>

@@ -1,16 +1,27 @@
 import React, { useState } from "react";
 import s from "./HeroCard.module.scss";
-
+import Image from "next/image";
+import logo from "../../assets/Logo.png";
+import backCard from "../../assets/card/CardBack.png";
+import mascot from "../../assets/pixelHero/MascotPixel.png";
 import { LeaderInfo } from "./components/LeaderInfo/LeaderInfo";
 import { AbilityHeroCard } from "./components/HeroAbilityCard/HeroAbilityCard";
 import { HeroInfo } from "./components/HeroInfo/HeroInfo";
 
-export const HeroCard = () => {
+export const HeroCard = ({
+  scale = 0.5,
+  onShowCard,
+  hideSettings = false,
+}: {
+  scale?: number;
+  onShowCard?: (value: boolean) => void;
+  hideSettings?: boolean;
+}) => {
   const [switchCard, setSwitchCard] = useState<boolean | null>(null);
   const [isLeader, setIsLeader] = useState<boolean | null>(false);
 
   return (
-    <div className={s.wrapper}>
+    <div className={`${s.wrapper}`} style={{ scale: scale }}>
       <div
         className={`${s.flip_card} 
         ${switchCard === null ? "" : switchCard ? s.switch : s.switchReturn}
@@ -29,6 +40,7 @@ export const HeroCard = () => {
             <div className="flex flex-col gap-[3px]">
               <AbilityHeroCard
                 type="Vanguard"
+                scale={scale}
                 textAbility={
                   <>
                     <strong>Перехват.</strong> Нанесите 2 урона герою, который
@@ -38,6 +50,7 @@ export const HeroCard = () => {
                 iconsAbility={<>icons</>}
               />
               <AbilityHeroCard
+                scale={scale}
                 type="Flank"
                 textAbility={
                   <>
@@ -48,6 +61,7 @@ export const HeroCard = () => {
                 iconsAbility={<>icons</>}
               />
               <AbilityHeroCard
+                scale={scale}
                 type="Rear"
                 textAbility={
                   <>
@@ -58,6 +72,7 @@ export const HeroCard = () => {
                 iconsAbility={<>icons</>}
               />
               <AbilityHeroCard
+                scale={scale}
                 type="Order"
                 textAbility={
                   <>
@@ -70,14 +85,54 @@ export const HeroCard = () => {
             </div>
             <LeaderInfo />
           </div>
-          <div className={s.backCard}></div>
+          <div className={s.backCard}>
+            <Image className="w-[16.927vw] h-[5.625vw]" src={logo} alt="hero" />
+
+            <Image
+              className="w-[7.396vw] h-[15.625vw] self-center"
+              src={backCard}
+              alt="hero"
+            />
+            <div className={s.backCardBottom}>
+              <Image
+                className="w-[3.594vw] h-[4.063vw]"
+                src={mascot}
+                alt="hero"
+              />
+              <Image
+                className="w-[3.594vw] h-[4.063vw]"
+                src={mascot}
+                alt="hero"
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div className={s.show}>
         <div className={s.settingsCard}>
-          <div onClick={() => setSwitchCard((e) => !e)}>switch</div>
-          <div onClick={() => setIsLeader((e) => !e)}>revolt</div>
-          <div>switch</div>
+          {!hideSettings && (
+            <div
+              className="text-[1.17vw]"
+              onClick={() => setSwitchCard((e) => !e)}
+            >
+              switch
+            </div>
+          )}
+          <div className="text-[1.17vw]" onClick={() => setIsLeader((e) => !e)}>
+            revolt
+          </div>
+          {!hideSettings && (
+            <div
+              className="text-[1.17vw]"
+              onClick={() => {
+                if (onShowCard) {
+                  onShowCard(true);
+                }
+              }}
+            >
+              show
+            </div>
+          )}
         </div>
       </div>
     </div>

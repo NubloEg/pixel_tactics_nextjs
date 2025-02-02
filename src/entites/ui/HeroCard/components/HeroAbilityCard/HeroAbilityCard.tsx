@@ -11,10 +11,12 @@ export const AbilityHeroCard = ({
   type,
   textAbility = <>Пусто</>,
   iconsAbility = <>Пусто</>,
+  scale,
 }: {
   type: keyof typeof AbilityTypeEnum;
   textAbility: ReactElement;
   iconsAbility: ReactElement;
+  scale: number;
 }) => {
   const styles = {
     Vanguard: s.Vanguard,
@@ -25,8 +27,8 @@ export const AbilityHeroCard = ({
 
   return (
     <div className={`${s.ability} ${styles[type] || ""}`}>
-      <div className={s.images}>{iconsAbility}</div>
-      <div className={s.discription}>{textAbility}</div>
+      <div className={s.iconsAbility}>{iconsAbility}</div>
+      {scale >= 1 && <div className={s.discription}>{textAbility}</div>}
     </div>
   );
 };
