@@ -7,16 +7,23 @@ import { HeroInfo } from "./components/HeroInfo/HeroInfo";
 
 export const HeroCard = () => {
   const [switchCard, setSwitchCard] = useState<boolean | null>(null);
-  const [revoltCard, setRevolt] = useState<boolean | null>(false);
+  const [isLeader, setIsLeader] = useState<boolean | null>(false);
 
   return (
     <div className={s.wrapper}>
       <div
         className={`${s.flip_card} 
         ${switchCard === null ? "" : switchCard ? s.switch : s.switchReturn}
-        ${revoltCard ? s.leader : s.hero}`}
+        ${isLeader ? s.leader : s.hero}`}
       >
-        <div className={s.flip_card_inner}>
+        <div
+          style={{
+            transform: `rotateY(${switchCard ? `180deg` : `0deg`}) rotateZ(${
+              isLeader ? `180deg` : `0deg`
+            })`,
+          }}
+          className={s.flip_card_inner}
+        >
           <div className={s.card}>
             <HeroInfo />
             <div className="flex flex-col gap-[3px]">
@@ -69,9 +76,7 @@ export const HeroCard = () => {
       <div className={s.show}>
         <div className={s.settingsCard}>
           <div onClick={() => setSwitchCard((e) => !e)}>switch</div>
-          {!switchCard && (
-            <div onClick={() => setRevolt((e) => !e)}>revolt</div>
-          )}
+          <div onClick={() => setIsLeader((e) => !e)}>revolt</div>
           <div>switch</div>
         </div>
       </div>
