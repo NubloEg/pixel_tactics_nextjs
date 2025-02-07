@@ -19,11 +19,11 @@ export const HeroInfo = () => {
             className={`${s.attack} relative flex items-center justify-center`}
           >
             <Image
-              className="w-[100%] h-[100%] absolute z-[1]"
+              className="w-[100%] h-[100%] absolute z-[1] "
               src={attack}
               alt="attack"
             />
-            <span className="z-[2] text-[2.083vw] leading-[1.302vw] text-[#CA2E21] font-bold">
+            <span className="z-[2] text-[2.083vw] leading-[1.302vw] text-[#CA2E21] font-bold white-text">
               3
             </span>
           </div>
@@ -35,7 +35,7 @@ export const HeroInfo = () => {
               src={sheet}
               alt="sheet"
             />
-            <span className="z-[2] text-[2.083vw] leading-[1.302vw] text-[#24377D] font-bold ">
+            <span className="z-[2] text-[2.083vw] leading-[1.302vw] text-[#24377D] font-bold white-text">
               10
             </span>
           </div>

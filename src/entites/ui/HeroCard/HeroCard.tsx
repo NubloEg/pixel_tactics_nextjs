@@ -12,19 +12,21 @@ export const HeroCard = ({
   scale = 0.5,
   onShowCard,
   hideSettings = false,
+  isLeaderInitial = false,
 }: {
   scale?: number;
   onShowCard?: (value: boolean) => void;
   hideSettings?: boolean;
+  isLeaderInitial: boolean;
 }) => {
-  const [switchCard, setSwitchCard] = useState<boolean | null>(null);
-  const [isLeader, setIsLeader] = useState<boolean | null>(false);
+  const [switchCard, setSwitchCard] = useState<boolean>(false);
+  const [isLeader, setIsLeader] = useState<boolean>(isLeaderInitial);
 
   return (
     <div className={`${s.wrapper}`} style={{ scale: scale }}>
       <div
         className={`${s.flip_card} 
-        ${switchCard === null ? "" : switchCard ? s.switch : s.switchReturn}
+        ${switchCard ? s.switch : s.switchReturn}
         ${isLeader ? s.leader : s.hero}`}
       >
         <div

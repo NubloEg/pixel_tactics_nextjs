@@ -4,12 +4,13 @@ import { ShowCard } from "@/features/ShowCard/ShowCard";
 
 export const HeroCardContainer = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const isLeader = true;
   return (
     <>
-      <HeroCard onShowCard={setIsOpen} />
+      <HeroCard isLeaderInitial={isLeader} onShowCard={setIsOpen} />
       {isOpen && (
         <ShowCard onClouse={setIsOpen}>
-          <HeroCard hideSettings scale={1.5} />
+          <HeroCard isLeaderInitial={isLeader} hideSettings scale={1.5} />
         </ShowCard>
       )}
     </>

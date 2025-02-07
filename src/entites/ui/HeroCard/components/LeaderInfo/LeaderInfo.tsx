@@ -38,19 +38,19 @@ export const LeaderInfo = () => {
                 src={attack}
                 alt="attack"
               />
-              <span className="z-[2] text-[2.083vw] leading-[1.302vw] text-[#CA2E21] font-bold">
+              <span className="white-text z-[2] text-[2.083vw] leading-[1.302vw] text-[#CA2E21] font-bold">
                 4
               </span>
             </div>
             <div
-              className={`w-[2.188vw] h-[2.292vw]  relative flex items-center justify-center`}
+              className={` w-[2.188vw] h-[2.292vw]  relative flex items-center justify-center`}
             >
               <Image
                 className="w-[100%] h-[100%] absolute z-[1]"
                 src={sheet}
                 alt="sheet"
               />
-              <span className="z-[2] text-[2.083vw] leading-[1.302vw] text-[#24377D] font-bold ">
+              <span className="white-text z-[2] text-[2.083vw] leading-[1.302vw] text-[#24377D] font-bold ">
                 20
               </span>
             </div>
