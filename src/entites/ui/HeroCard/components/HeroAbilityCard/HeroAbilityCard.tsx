@@ -6,6 +6,16 @@ export enum AbilityTypeEnum {
   "Rear" = "Rear",
   "Order" = "Order",
 }
+// 👇 import local font
+import localFont from "next/font/local";
+
+//👇 Configure our local font object
+// const pixelFontText = localFont({
+//   src: "../../../../../../asset/Nine By Five NBP/NineByFiveNbp.ttf",
+// });
+const pixelFontNumber = localFont({
+  src: "../../../../../../asset/Nineteen Ninety Three/Nineteen Ninety Three.otf",
+});
 
 export const AbilityHeroCard = ({
   type,
@@ -28,7 +38,11 @@ export const AbilityHeroCard = ({
   return (
     <div className={`${s.ability} ${styles[type] || ""}`}>
       <div className={s.iconsAbility}>{iconsAbility}</div>
-      {scale >= 1 && <div className={s.discription}>{textAbility}</div>}
+      {scale >= 1 && (
+        <div style={pixelFontNumber.style} className={s.discription}>
+          {textAbility}
+        </div>
+      )}
     </div>
   );
 };

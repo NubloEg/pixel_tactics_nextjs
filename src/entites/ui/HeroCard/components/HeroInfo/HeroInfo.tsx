@@ -5,14 +5,25 @@ import attack from "../../../../assets/icons/Attack.png";
 import sheet from "../../../../assets/icons/Sheet.png";
 import heroLabel from "../../../../assets/icons/heroLabel.png";
 
+// 👇 import local font
+import localFont from "next/font/local";
+
+//👇 Configure our local font object
+const pixelFontText = localFont({
+  src: "../../../../../../asset/Nine By Five NBP/NineByFiveNbp.ttf",
+});
+const pixelFontNumber = localFont({
+  src: "../../../../../../asset/Nineteen Ninety Three/Nineteen Ninety Three.otf",
+});
+
 export const HeroInfo = () => {
   return (
     <div className={s.heroInfo}>
       <Image className={s.imgHero} src={hero} alt="hero" />
       <div className="flex flex-1 flex-col pl-[2.604vw]">
-        <div className="flex ">
+        <div style={pixelFontText.style} className="flex ">
           <Image className={s.heroLabel} src={heroLabel} alt="heroLabel" />
-          <span className="text-[1.25vw] leading-[0.938vw]">Рыцарь</span>
+          <span className="text-[2.083vw] leading-[1.146vw]">Рыцарь</span>
         </div>
         <div className="flex flex-1 items-center gap-[0.625vw] justify-end ">
           <div
@@ -23,7 +34,10 @@ export const HeroInfo = () => {
               src={attack}
               alt="attack"
             />
-            <span className="z-[2] text-[2.083vw] leading-[1.302vw] text-[#CA2E21] font-bold white-text">
+            <span
+              style={pixelFontNumber.style}
+              className="z-[2] text-[2.083vw] leading-[1.302vw] text-[#CA2E21] white-text"
+            >
               3
             </span>
           </div>
@@ -35,7 +49,10 @@ export const HeroInfo = () => {
               src={sheet}
               alt="sheet"
             />
-            <span className="z-[2] text-[2.083vw] leading-[1.302vw] text-[#24377D] font-bold white-text">
+            <span
+              style={pixelFontNumber.style}
+              className="z-[2] text-[#24377D] text-[2.083vw] leading-[1.302vw]   white-text"
+            >
               10
             </span>
           </div>

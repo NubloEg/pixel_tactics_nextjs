@@ -19,7 +19,7 @@ export default function UIButton({
   return (
     <button
       {...props}
-      className={`${styleVariant[variant]} px-[8px] py-[12px] border-[4px] rounded-[12px] ${props.className}`}
+      className={`${styleVariant[variant]} px-[0.417vw] py-[0.625vw] border-[0.208vw] rounded-[0.625vw] w-[100%] ${props.className}`}
     >
       {children}
     </button>

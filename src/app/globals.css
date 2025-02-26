@@ -19,8 +19,38 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  height: 100dvh;
+  font-size: max(12px, 0.833vw);
 }
 
 .white-text {
-  -webkit-text-stroke: 1px white;
+  text-shadow: 1px 2px 0.1px white;
+}
+
+.bgMascot {
+  background-image: url("../shared/assets/bgMascot.png");
+  background-size: contain;
+}
+
+.bgSheet {
+  background-image: url("../shared/assets/bgSheet.png");
+  background-size: cover;
+}
+
+.bgAttack {
+  background-image: url("../shared/assets/bgAttack.png");
+  background-size: cover;
+}
+
+.bgLeader {
+  background-image: url("../shared/assets/bgLeader.png");
+  background-size: cover;
+}
+
+.gameSpace {
+  display: grid;
+  grid-template-columns: repeat(3, 8.594vw);
+  grid-template-rows: repeat(3, 12.865vw);
+  grid-column-gap: 0.833vw;
+  grid-row-gap: 0.417vw;
 }

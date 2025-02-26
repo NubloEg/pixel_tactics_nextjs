@@ -3,29 +3,34 @@ import Image from "next/image";
 import logo from "../../../entites/assets/Logo.png";
 import Link from "next/link";
 import UILink from "../UILink/UILink";
+import s from "./SaidBar.module.scss";
+import UIButton from "../UIButton/UIButton";
+import UIAvatar from "../UIAvatar/UIAvatar";
 export default function SaidBar() {
   return (
-    <div className="bg-gray-300 min-w-[10.156vw] w-[10.156vw] flex flex-col gap-[6px] flex-auto justify-between">
+    <div
+      className={`${s.wrapper} bg-gray-300 w-[10.156vw] flex flex-col gap-[0.313vw] flex-auto justify-between`}
+    >
       <Link href="/">
         <Image src={logo} alt="hero" />
       </Link>
-      <nav className="flex flex-[0.8] flex-col justify-self-start gap-[6px]">
-        <UILink className="px-4" href="/">
-          <button className="bg-red-500 w-[100%]">Home</button>
+      <nav className="flex flex-[0.8] flex-col justify-self-start gap-[0.313vw]">
+        <UILink className="px-[0.833vw]" href="/">
+          <UIButton variant="red">Home</UIButton>
         </UILink>
-        <UILink className="px-4" href="/signUp">
-          <button className="bg-red-500 w-[100%]">SignUp</button>
+        <UILink className="px-[0.833vw]" href="/signUp">
+          <UIButton variant="red">SignUp</UIButton>
         </UILink>
-        <UILink className="px-4" href="/game">
-          <button className="bg-red-500 w-[100%]">Game</button>
+        <UILink className="px-[0.833vw]" href="/createRoom">
+          <UIButton variant="red">Game</UIButton>
         </UILink>
       </nav>
       <Link href="/profile">
         <div className="sidBarProfile flex items-center gap-[0.313vw] bg-gray-400 py-[6px] px-[8px]">
-          <div className="h-[3.125vw] w-[3.125vw] rounded-full bg-blue-400"></div>
+          <UIAvatar size="3.125vw" />
           <div className="flex flex-col text-[0.825vw]">
             <span>Елизавета</span>
-            <span>Уровань 1000</span>
+            <span>Уровень 1000</span>
           </div>
         </div>
       </Link>

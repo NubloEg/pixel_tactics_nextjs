@@ -37,7 +37,7 @@ export const HeroCard = ({
           }}
           className={s.flip_card_inner}
         >
-          <div className={s.card}>
+          <div className={`${s.card}`}>
             <HeroInfo />
             <div className="flex flex-col gap-[3px]">
               <AbilityHeroCard
