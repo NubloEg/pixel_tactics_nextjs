@@ -14,7 +14,6 @@ export default function CreateRoom() {
 
   return (
     <MainPageLayout>
-      <ComponentsUI />
       <div className="bgAttack h-[100%] p-[1.25vw]">
         {rooms.length > 0 ? (
           <div className="flex flex-wrap">
@@ -40,6 +39,7 @@ export default function CreateRoom() {
           <div>emty</div>
         )}
       </div>
+      <ComponentsUI />
     </MainPageLayout>
   );
 }

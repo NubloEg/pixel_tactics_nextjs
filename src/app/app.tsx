@@ -1,5 +1,10 @@
 import type { AppProps } from "next/app";
 
 export function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <div id="modal-root" />
+      <Component {...pageProps} />
+    </>
+  );
 }

@@ -56,8 +56,12 @@ export default function ComponentsUI() {
       <div className="flex flex-col gap-[12px]">
         <h1>Avatar</h1>
         <div className="flex gap-[6px]">
-          <UIAvatar size="200px" />
-          <UIAvatar size="500px" />
+          <UIAvatar size="10.417vw" />
+          <UIAvatar
+            image="https://wow.zamimg.com/uploads/blog/images/19058-15th-anniversary-of-leeroy-jenkins-meme-video.jpg"
+            isChange
+            size="26.042vw"
+          />
           <UIAvatar />
         </div>
       </div>

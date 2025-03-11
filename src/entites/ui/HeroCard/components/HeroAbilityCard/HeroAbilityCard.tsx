@@ -1,13 +1,9 @@
 import { ReactElement } from "react";
 import s from "../../HeroCard.module.scss";
-export enum AbilityTypeEnum {
-  "Vanguard" = "Vanguard",
-  "Flank" = "Flank",
-  "Rear" = "Rear",
-  "Order" = "Order",
-}
+
 // 👇 import local font
 import localFont from "next/font/local";
+import { AbilityTypeEnum } from "@/entites/models/Card";
 
 //👇 Configure our local font object
 // const pixelFontText = localFont({

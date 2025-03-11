@@ -3,13 +3,13 @@ import s from "./HeroCard.module.scss";
 import Image from "next/image";
 import logo from "../../assets/Logo.png";
 import backCard from "../../assets/card/CardBack.png";
-import mascot from "../../assets/pixelHero/MascotPixel.png";
+import mascot from "../../assets/card/MascotPixel.png";
 import { LeaderInfo } from "./components/LeaderInfo/LeaderInfo";
 import { AbilityHeroCard } from "./components/HeroAbilityCard/HeroAbilityCard";
 import { HeroInfo } from "./components/HeroInfo/HeroInfo";
 
 export const HeroCard = ({
-  scale = 0.5,
+  scale = 1,
   onShowCard,
   hideSettings = false,
   isLeaderInitial = false,

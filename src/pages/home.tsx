@@ -4,7 +4,10 @@ import { HeroCardContainer } from "@/entites/ui/HeroCard/HeroCardContainer";
 export default function HomePage() {
   return (
     <MainPageLayout>
-      <HeroCardContainer />
+      <div className="flex gap-[8px] p-8">
+        <HeroCardContainer />
+        <HeroCardContainer />
+      </div>
     </MainPageLayout>
   );
 }
