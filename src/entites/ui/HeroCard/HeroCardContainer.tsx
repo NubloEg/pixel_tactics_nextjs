@@ -1,18 +1,23 @@
-import React, { useState } from "react";
-import { HeroCard } from "./HeroCard";
+import React, { Fragment, useState } from "react";
 import { ShowCard } from "@/features/ShowCard/ShowCard";
 import ReactDOM from "react-dom";
 
+import { HeroCardSettings } from "./HeroCardSettings";
+
 export const HeroCardContainer = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const isLeader = true;
+  const isLeaderInition = true;
   return (
     <>
-      <HeroCard isLeaderInitial={isLeader} onShowCard={setIsOpen} />
+      <HeroCardSettings
+        isLeaderInition={isLeaderInition}
+        setIsShow={setIsOpen}
+        scale={1}
+      />
       {isOpen &&
         ReactDOM.createPortal(
           <ShowCard onClose={setIsOpen}>
-            <HeroCard isLeaderInitial={isLeader} hideSettings scale={1.5} />
+            <HeroCardSettings scale={1} isLeaderInition={isLeaderInition} />
           </ShowCard>,
           document.body
         )}

@@ -2,27 +2,41 @@ import { IAchievement } from "@/app/dafaultStore";
 import UIAvatar from "@/shared/ui/UIAvatar/UIAvatar";
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-
 export default function Achievement({
   achievement,
   size,
+  isDisabled,
+  isLock,
 }: {
   size?: string;
   achievement?: IAchievement;
+  isDisabled?: boolean;
+  isLock?: boolean;
 }) {
   const [isShow, setIsShow] = useState(false);
+
   return (
-    <>
+    <div
+      style={{
+        filter: `grayscale(${isDisabled && !isLock ? 1 : 0})`,
+        cursor: isLock ? "auto" : "pointer",
+      }}
+    >
       <UIAvatar
-        className="cursor-pointer"
         onClick={() => setIsShow(true)}
-        image={achievement?.icon}
+        image={
+          isLock
+            ? "https://i.pinimg.com/736x/6f/df/35/6fdf3511fd3fbdc1a5977e518207b930.jpg"
+            : achievement?.icon
+        }
         size={size}
       />
       {isShow &&
+        !isLock &&
         ReactDOM.createPortal(
           <div
             onClick={() => setIsShow(false)}
+            style={{ filter: `grayscale(${isDisabled ? 1 : 0})` }}
             className="flex absolute index-9999999 bg-black/80  w-[100%] h-[100%] top-[0] left-[0] items-center justify-center"
           >
             <div
@@ -48,6 +62,6 @@ export default function Achievement({
           </div>,
           document.body
         )}
-    </>
+    </div>
   );
 }

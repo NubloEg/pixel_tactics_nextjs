@@ -28,7 +28,6 @@ export default function CardField({
       className={`w-[8.594vw] h-[12.865vw] flex items-center justify-center transition-all duration-[0.3s] ${className} ${s.CardField}`}
       style={{ top: translation.top, transform: translation.transform }}
     >
-      <span>CardField</span>
     </div>
   );
 }

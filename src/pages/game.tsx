@@ -21,6 +21,7 @@ export default function Game() {
           </div>
           <div className="bg-gray-400 w-[30%]">
             <div className="flex w-[100%]">
+              Время на ход
               <UIButton
                 variant="green"
                 className="w-[max-content] justify-self-end"

@@ -6,6 +6,7 @@ export default function HomePage() {
     <MainPageLayout>
       <div className="flex gap-[8px] p-8">
         <HeroCardContainer />
+
         <HeroCardContainer />
       </div>
     </MainPageLayout>

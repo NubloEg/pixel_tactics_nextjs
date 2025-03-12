@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import user from "../../../entites/assets/hero/Knight.png";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 export default function UIAvatar({
   size = "5.208vw",
@@ -9,7 +10,7 @@ export default function UIAvatar({
   ...props
 }: {
   size?: string;
-  image?: string;
+  image?: string | StaticImport;
   isChange?: boolean;
 } & React.ButtonHTMLAttributes<HTMLDivElement>) {
   const [isError, setIsError] = useState(false);

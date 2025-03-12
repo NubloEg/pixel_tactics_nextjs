@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import s from "./HeroCard.module.scss";
 import Image from "next/image";
 import logo from "../../assets/Logo.png";
@@ -10,18 +10,13 @@ import { HeroInfo } from "./components/HeroInfo/HeroInfo";
 
 export const HeroCard = ({
   scale = 1,
-  onShowCard,
-  hideSettings = false,
-  isLeaderInitial = false,
+  isLeader = false,
+  switchCard = false,
 }: {
   scale?: number;
-  onShowCard?: (value: boolean) => void;
-  hideSettings?: boolean;
-  isLeaderInitial: boolean;
+  isLeader: boolean;
+  switchCard: boolean;
 }) => {
-  const [switchCard, setSwitchCard] = useState<boolean>(false);
-  const [isLeader, setIsLeader] = useState<boolean>(isLeaderInitial);
-
   return (
     <div className={`${s.wrapper}`} style={{ scale: scale }}>
       <div
@@ -108,33 +103,6 @@ export const HeroCard = ({
               />
             </div>
           </div>
-        </div>
-      </div>
-      <div className={s.show}>
-        <div className={s.settingsCard}>
-          {!hideSettings && (
-            <div
-              className="text-[1.17vw]"
-              onClick={() => setSwitchCard((e) => !e)}
-            >
-              switch
-            </div>
-          )}
-          <div className="text-[1.17vw]" onClick={() => setIsLeader((e) => !e)}>
-            revolt
-          </div>
-          {!hideSettings && (
-            <div
-              className="text-[1.17vw]"
-              onClick={() => {
-                if (onShowCard) {
-                  onShowCard(true);
-                }
-              }}
-            >
-              show
-            </div>
-          )}
         </div>
       </div>
     </div>
