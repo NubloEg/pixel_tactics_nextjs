@@ -6,8 +6,9 @@ export function PxToVw({
   px: number;
   scale?: number;
   view?: number;
+  isOnlyNumber?: number;
 }) {
-  const Vw = ((px * 100) / view) * scale;
+  const Vw = ((px * 100) / view) * (scale < 0.5 ? 1 : scale);
 
   return `${Vw}vw`;
 }

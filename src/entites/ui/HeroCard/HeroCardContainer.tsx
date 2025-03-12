@@ -12,7 +12,7 @@ export const HeroCardContainer = () => {
       <HeroCardSettings
         isLeaderInition={isLeaderInition}
         setIsShow={setIsOpen}
-        scale={0.6}
+        scale={0.5}
       />
       {isOpen &&
         ReactDOM.createPortal(

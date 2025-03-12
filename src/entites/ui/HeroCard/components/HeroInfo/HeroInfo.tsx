@@ -1,6 +1,6 @@
 import Image from "next/image";
 import s from "../../HeroCard.module.scss";
-import hero from "../../../../assets/pixelHero/KnightPixel.png";
+import hero from "../../../../assets/pixelHero/AssassinPixel.png";
 //import hero from "../../../../assets/pixelHero/MascotPixel.png";
 import attack from "../../../../assets/icons/Attack.png";
 import sheet from "../../../../assets/icons/Sheet.png";

@@ -1,7 +1,7 @@
 import leaderLabel from "../../../../assets/icons/leaderLabel.png";
 import partOne from "../../../../assets/icons/partOne.png";
 import Image from "next/image";
-import hero from "../../../../assets/pixelHero/KnightPixel.png";
+import hero from "../../../../assets/pixelHero/AssassinPixel.png";
 //import hero from "../../../../assets/pixelHero/MascotPixel.png";
 import attack from "../../../../assets/icons/Attack.png";
 import sheet from "../../../../assets/icons/Sheet.png";
@@ -46,7 +46,7 @@ export const LeaderInfo = ({ scale }: { scale: number }) => {
         <Image
           style={{
             width: PxToVw({ px: 54, scale: scale }),
-            height: PxToVw({ px: 88, scale: scale }),
+            height: PxToVw({ px: 86, scale: scale }),
             marginLeft: `${PxToVw({ px: 4, scale: scale })}`,
           }}
           className="z-[2]"
