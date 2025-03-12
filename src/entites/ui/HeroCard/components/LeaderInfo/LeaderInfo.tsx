@@ -1,13 +1,14 @@
 import leaderLabel from "../../../../assets/icons/leaderLabel.png";
 import partOne from "../../../../assets/icons/partOne.png";
 import Image from "next/image";
-//import hero from "../../../../assets/pixelHero/KnightPixel.png";
-import hero from "../../../../assets/pixelHero/MascotPixel.png";
+import hero from "../../../../assets/pixelHero/KnightPixel.png";
+//import hero from "../../../../assets/pixelHero/MascotPixel.png";
 import attack from "../../../../assets/icons/Attack.png";
 import sheet from "../../../../assets/icons/Sheet.png";
 
 // 👇 import local font
 import localFont from "next/font/local";
+import { PxToVw } from "@/app/utils";
 
 //👇 Configure our local font object
 const pixelFontText = localFont({
@@ -17,37 +18,83 @@ const pixelFontNumber = localFont({
   src: "../../../../../../asset/Nineteen Ninety Three/Nineteen Ninety Three.otf",
 });
 
-export const LeaderInfo = () => {
+export const LeaderInfo = ({ scale }: { scale: number }) => {
   return (
-    <div className="flex h-[7.135vw] rotate-180">
-      <div className="flex flex-col items-start relative justify-end w-[3.281vw]">
+    <div
+      style={{
+        height: PxToVw({ px: 137, scale: scale }),
+      }}
+      className="flex rotate-180"
+    >
+      <div
+        style={{
+          width: PxToVw({ px: 63, scale: scale }),
+        }}
+        className="flex flex-col items-start relative justify-end "
+      >
         <Image
-          className="w-[3.281vw] h-[3.594vw] absolute top-[-0.729vw] left-[-0.104vw]"
+          style={{
+            width: PxToVw({ px: 63, scale: scale }),
+            height: PxToVw({ px: 69, scale: scale }),
+            top: `-${PxToVw({ px: 14, scale: scale })}`,
+            left: `-${PxToVw({ px: 2, scale: scale })}`,
+          }}
+          className="absolute"
           src={leaderLabel}
           alt="leaderLabel"
         />
         <Image
-          className="w-[2.813vw] h-[4.583vw] ml-[0.208vw] z-[2]"
+          style={{
+            width: PxToVw({ px: 54, scale: scale }),
+            height: PxToVw({ px: 88, scale: scale }),
+            marginLeft: `${PxToVw({ px: 4, scale: scale })}`,
+          }}
+          className="z-[2]"
           src={hero}
           alt="hero"
         />
       </div>
       <div className="flex flex-col flex-1">
         <div style={pixelFontText.style} className="flex flex-col gap-[0px]">
-          <span className="text-[2.083vw] leading-[1.146vw]">Каденза</span>
-          <span className="text-[0.833vw] pl-[0.052vw] leading-[0.761vw]">
+          <span
+            style={{
+              fontSize: PxToVw({ px: 40, scale: scale }),
+              lineHeight: PxToVw({ px: 22, scale: scale }),
+            }}
+          >
+            Каденза
+          </span>
+          <span
+            style={{
+              fontSize: PxToVw({ px: 16, scale: scale }),
+              lineHeight: PxToVw({ px: 14.611, scale: scale }),
+              paddingLeft: PxToVw({ px: 1, scale: scale }),
+            }}
+          >
             Механическая Пехотная Дивизия
           </span>
         </div>
         <div className="flex flex-1 justify-between items-center">
           <Image
-            className="w-[1.25vw] h-[1.563vw]"
+            style={{
+              width: PxToVw({ px: 24, scale: scale }),
+              height: PxToVw({ px: 30, scale: scale }),
+            }}
             src={partOne}
             alt="partOne"
           />
-          <div className="flex items-center gap-[0.625vw] justify-between">
+          <div
+            style={{
+              gap: PxToVw({ px: 12, scale: scale }),
+            }}
+            className="flex items-center justify-between"
+          >
             <div
-              className={`w-[2.448vw] h-[2.448vw] relative flex items-center justify-center`}
+              style={{
+                width: PxToVw({ px: 47, scale: scale }),
+                height: PxToVw({ px: 47, scale: scale }),
+              }}
+              className={` relative flex items-center justify-center`}
             >
               <Image
                 className="w-[100%] h-[100%] absolute z-[1]"
@@ -55,14 +102,22 @@ export const LeaderInfo = () => {
                 alt="attack"
               />
               <span
-                style={pixelFontNumber.style}
-                className=" z-[2] text-[2.083vw] leading-[1.302vw]   white-text text-[#CA2E21] "
+                style={{
+                  ...pixelFontNumber.style,
+                  fontSize: PxToVw({ px: 40, scale: scale }),
+                  lineHeight: PxToVw({ px: 25, scale: scale }),
+                }}
+                className=" z-[2]     white-text text-[#CA2E21] "
               >
                 4
               </span>
             </div>
             <div
-              className={` w-[2.188vw] h-[2.292vw]  relative flex items-center justify-center`}
+              style={{
+                width: PxToVw({ px: 42, scale: scale }),
+                height: PxToVw({ px: 44, scale: scale }),
+              }}
+              className={`relative flex items-center justify-center`}
             >
               <Image
                 className="w-[100%] h-[100%] absolute z-[1]"
@@ -70,8 +125,12 @@ export const LeaderInfo = () => {
                 alt="sheet"
               />
               <span
-                style={pixelFontNumber.style}
-                className=" z-[2] text-[2.083vw] leading-[1.302vw]   white-text text-[#24377D] "
+                style={{
+                  ...pixelFontNumber.style,
+                  fontSize: PxToVw({ px: 40, scale: scale }),
+                  lineHeight: PxToVw({ px: 25, scale: scale }),
+                }}
+                className=" z-[2] white-text text-[#24377D] "
               >
                 20
               </span>
@@ -79,8 +138,11 @@ export const LeaderInfo = () => {
           </div>
         </div>
         <div
-          style={pixelFontText.style}
-          className="text-[0.938vw]  leading-[0.521vw] tracking-[0.7] flex-1"
+          style={{...pixelFontText.style,
+            fontSize: PxToVw({ px: 18, scale: scale }),
+            lineHeight: PxToVw({ px: 10, scale: scale }),
+          }}
+          className="tracking-[0.7] flex-1"
         >
           Ваши герои и лидер получают на 1<br /> меньше урона от атак
         </div>

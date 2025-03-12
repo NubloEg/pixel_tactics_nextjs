@@ -10,7 +10,7 @@ export default function ProgressBar(lvl: {
   setTimeout(() => {
     const newProcent = (lvl.exp * 100) / lvl.maxExp;
     setProcentProgressBar(newProcent > 100 ? 100 : newProcent);
-  }, 1000);
+  }, 100);
   return (
     <div className="border-solid border-gray-500 border-[1px] w-[100%] h-[80%] flex-1 rounded-[4px]">
       <div

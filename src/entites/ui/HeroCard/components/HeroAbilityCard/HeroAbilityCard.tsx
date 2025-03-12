@@ -4,6 +4,7 @@ import s from "../../HeroCard.module.scss";
 // 👇 import local font
 import localFont from "next/font/local";
 import { AbilityTypeEnum } from "@/entites/models/Card";
+import { PxToVw } from "@/app/utils";
 
 //👇 Configure our local font object
 // const pixelFontText = localFont({
@@ -32,10 +33,25 @@ export const AbilityHeroCard = ({
   };
 
   return (
-    <div className={`${s.ability} ${styles[type] || ""}`}>
+    <div
+      style={{
+        minHeight: PxToVw({ px: 62, scale: scale }),
+        borderRadius: PxToVw({ px: 12, scale: scale }),
+        border: `${PxToVw({ px: 5, scale: scale })} solid black`,
+        padding: PxToVw({ px: 2, scale: scale }),
+        gap: PxToVw({ px: 4, scale: scale }),
+      }}
+      className={`${s.ability} ${styles[type] || ""}`}
+    >
       <div className={s.iconsAbility}>{iconsAbility}</div>
       {scale >= 1 && (
-        <div style={pixelFontNumber.style} className={s.discription}>
+        <div
+          style={{
+            ...pixelFontNumber.style,
+            fontSize: PxToVw({ px: 8.659, scale: scale }),
+          }}
+          className={s.discription}
+        >
           {textAbility}
         </div>
       )}

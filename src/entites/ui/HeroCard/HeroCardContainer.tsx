@@ -6,18 +6,18 @@ import { HeroCardSettings } from "./HeroCardSettings";
 
 export const HeroCardContainer = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const isLeaderInition = true;
+  const isLeaderInition = false;
   return (
     <>
       <HeroCardSettings
         isLeaderInition={isLeaderInition}
         setIsShow={setIsOpen}
-        scale={1}
+        scale={0.6}
       />
       {isOpen &&
         ReactDOM.createPortal(
           <ShowCard onClose={setIsOpen}>
-            <HeroCardSettings scale={1} isLeaderInition={isLeaderInition} />
+            <HeroCardSettings scale={1.5} isLeaderInition={isLeaderInition} />
           </ShowCard>,
           document.body
         )}

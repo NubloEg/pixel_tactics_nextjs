@@ -15,7 +15,7 @@ export const HeroCardSettings = ({
   const [isLeader, setIsLeader] = useState<boolean>(isLeaderInition);
 
   return (
-    <div className="CONTAINER relative">
+    <div className="relative w-[max-content] h-[max-content]">
       <HeroCard switchCard={switchCard} isLeader={isLeader} scale={scale} />
       <div className="absolute bg-gray-500/70 top-0 w-[100%] h-[100%] rounded-[.625vw] flex flex-col p-[12px] gap-[8px] transition-all duration-[0.3s] opacity-0 hover:opacity-100">
         <UIButton onClick={() => setSwitchCard((e) => !e)}>Switch</UIButton>
