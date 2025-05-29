@@ -1,4 +1,4 @@
-import { AllAchievements } from "@/app/dafaultStore";
+import { AllAchievements } from "@/app/store/dafaultStore";
 import Achievement from "@/entites/ui/Achievement/Achievement";
 import MainPageLayout from "@/shared/ui/MainPageLayout/MainPageLayout";
 import ProfileInfo from "@/shared/ui/ProfileInfo/ProfileInfo";

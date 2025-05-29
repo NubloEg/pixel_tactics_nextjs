@@ -5,8 +5,9 @@ export default function HomePage() {
   return (
     <MainPageLayout>
       <div className="flex gap-3 p-3">
-        <HeroCardContainer />
-        <HeroCardContainer />
+  {Array(5).fill(0).map((el,index)=>
+        <HeroCardContainer key={index} id={index} />
+      )}     
       </div>
     </MainPageLayout>
   );

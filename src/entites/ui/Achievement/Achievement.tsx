@@ -1,4 +1,4 @@
-import { IAchievement } from "@/app/dafaultStore";
+import { IAchievement } from "@/app/store/dafaultStore";
 import UIAvatar from "@/shared/ui/UIAvatar/UIAvatar";
 import React, { useState } from "react";
 import ReactDOM from "react-dom";

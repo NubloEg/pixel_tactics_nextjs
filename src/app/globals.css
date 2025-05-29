@@ -54,16 +54,3 @@ body {
   grid-column-gap: 0.833vw;
   grid-row-gap: 0.417vw;
 }
-
-.CONTAINER {
-  border: 1px solid black;
-  width: max-content;
-  outline: none;
-  padding: 0;
-  margin: 0;
-  box-sizing: content-box;
-
-  * {
-    border: 1px solid black;
-  }
-}

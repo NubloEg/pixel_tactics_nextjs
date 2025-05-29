@@ -14,6 +14,7 @@ export default function UIAvatar({
   isChange?: boolean;
 } & React.ButtonHTMLAttributes<HTMLDivElement>) {
   const [isError, setIsError] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <div
@@ -26,6 +27,7 @@ export default function UIAvatar({
           fill
           src={image}
           onError={() => setIsError(true)}
+          onLoad={() => setIsLoaded(true)}
           unoptimized
           className="object-cover"
           alt="user"

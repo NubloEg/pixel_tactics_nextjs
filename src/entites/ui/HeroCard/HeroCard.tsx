@@ -8,22 +8,25 @@ import { LeaderInfo } from "./components/LeaderInfo/LeaderInfo";
 import { AbilityHeroCard } from "./components/HeroAbilityCard/HeroAbilityCard";
 import { HeroInfo } from "./components/HeroInfo/HeroInfo";
 import { PxToVw } from "@/app/utils";
+import { CardInfo } from "@/app/store/cardStore";
 
 export const HeroCard = ({
   scale = 1,
   isLeader = false,
   switchCard = false,
+  heroInfo,
 }: {
   scale?: number;
   isLeader: boolean;
   switchCard: boolean;
+  heroInfo: CardInfo;
 }) => {
   return (
     <div className={`${s.wrapper}`}>
       <div
         style={{
           width: `${PxToVw({ px: 330, scale: scale })}`,
-          height: `${PxToVw({ px: 483, scale: scale })}`,
+          height: `${PxToVw({ px: 488, scale: scale })}`,
         }}
         className={`${s.flip_card} 
         ${switchCard ? s.switch : s.switchReturn}
@@ -49,54 +52,39 @@ export const HeroCard = ({
             }}
             className={`${s.card}`}
           >
-            <HeroInfo scale={scale} />
-            <div className="flex flex-col gap-[3px]">
+            <HeroInfo heroInfo={heroInfo} scale={scale} />
+            <div
+              style={{
+                gap: PxToVw({ px: 3, scale: scale }),
+              }}
+              className="flex flex-col"
+            >
               <AbilityHeroCard
                 type="Vanguard"
                 scale={scale}
-                textAbility={
-                  <>
-                    <strong>Перехват.</strong> Нанесите 2 урона герою, который
-                    выбрал этого героя как цель своеё атаки
-                  </>
-                }
+                textAbility={heroInfo.hero.abilitys.vanguard}
                 iconsAbility={<>icons</>}
               />
               <AbilityHeroCard
                 scale={scale}
                 type="Flank"
-                textAbility={
-                  <>
-                    <strong>Перехват.</strong> Нанесите 2 урона герою, который
-                    выбрал этого героя как цель своеё атаки
-                  </>
-                }
+                textAbility={heroInfo.hero.abilitys.flank}
                 iconsAbility={<>icons</>}
               />
               <AbilityHeroCard
                 scale={scale}
                 type="Rear"
-                textAbility={
-                  <>
-                    <strong>Перехват.</strong> Нанесите 2 урона герою, который
-                    выбрал этого героя как цель своеё атаки
-                  </>
-                }
+                textAbility={heroInfo.hero.abilitys.rear}
                 iconsAbility={<>icons</>}
               />
               <AbilityHeroCard
                 scale={scale}
                 type="Order"
-                textAbility={
-                  <>
-                    <strong>Перехват.</strong> Нанесите 2 урона герою, который
-                    выбрал этого героя как цель своеё атаки
-                  </>
-                }
+                textAbility={heroInfo.hero.abilitys.order}
                 iconsAbility={<>icons</>}
               />
             </div>
-            <LeaderInfo scale={scale} />
+            <LeaderInfo heroInfo={heroInfo} scale={scale} />
           </div>
           <div
             style={{

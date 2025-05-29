@@ -1,7 +1,7 @@
 import leaderLabel from "../../../../assets/icons/leaderLabel.png";
 import partOne from "../../../../assets/icons/partOne.png";
 import Image from "next/image";
-import hero from "../../../../assets/pixelHero/AssassinPixel.png";
+//import hero from "../../../../assets/pixelHero/AssassinPixel.png";
 //import hero from "../../../../assets/pixelHero/MascotPixel.png";
 import attack from "../../../../assets/icons/Attack.png";
 import sheet from "../../../../assets/icons/Sheet.png";
@@ -9,6 +9,7 @@ import sheet from "../../../../assets/icons/Sheet.png";
 // 👇 import local font
 import localFont from "next/font/local";
 import { PxToVw } from "@/app/utils";
+import { CardInfo } from "@/app/store/cardStore";
 
 //👇 Configure our local font object
 const pixelFontText = localFont({
@@ -18,7 +19,13 @@ const pixelFontNumber = localFont({
   src: "../../../../../../asset/Nineteen Ninety Three/Nineteen Ninety Three.otf",
 });
 
-export const LeaderInfo = ({ scale }: { scale: number }) => {
+export const LeaderInfo = ({
+  scale,
+  heroInfo,
+}: {
+  scale: number;
+  heroInfo: CardInfo;
+}) => {
   return (
     <div
       style={{
@@ -50,19 +57,19 @@ export const LeaderInfo = ({ scale }: { scale: number }) => {
             marginLeft: `${PxToVw({ px: 4, scale: scale })}`,
           }}
           className="z-[2]"
-          src={hero}
+          src={heroInfo.iconHero}
           alt="hero"
         />
       </div>
       <div className="flex flex-col flex-1">
-        <div style={pixelFontText.style} className="flex flex-col gap-[0px]">
+        <div style={pixelFontText.style} className="flex flex-col">
           <span
             style={{
               fontSize: PxToVw({ px: 40, scale: scale }),
               lineHeight: PxToVw({ px: 22, scale: scale }),
             }}
           >
-            Каденза
+            {heroInfo.leader.name}
           </span>
           <span
             style={{
@@ -71,7 +78,7 @@ export const LeaderInfo = ({ scale }: { scale: number }) => {
               paddingLeft: PxToVw({ px: 1, scale: scale }),
             }}
           >
-            Механическая Пехотная Дивизия
+            {heroInfo.leader.description}
           </span>
         </div>
         <div className="flex flex-1 justify-between items-center">
@@ -107,9 +114,9 @@ export const LeaderInfo = ({ scale }: { scale: number }) => {
                   fontSize: PxToVw({ px: 40, scale: scale }),
                   lineHeight: PxToVw({ px: 25, scale: scale }),
                 }}
-                className=" z-[2]     white-text text-[#CA2E21] "
+                className=" z-[2] white-text text-[#CA2E21] "
               >
-                4
+                {heroInfo.leader.attack}
               </span>
             </div>
             <div
@@ -132,19 +139,20 @@ export const LeaderInfo = ({ scale }: { scale: number }) => {
                 }}
                 className=" z-[2] white-text text-[#24377D] "
               >
-                20
+                {heroInfo.leader.sheet}
               </span>
             </div>
           </div>
         </div>
         <div
-          style={{...pixelFontText.style,
+          style={{
+            ...pixelFontText.style,
             fontSize: PxToVw({ px: 18, scale: scale }),
             lineHeight: PxToVw({ px: 10, scale: scale }),
           }}
-          className="tracking-[0.7] flex-1"
+          className="tracking-[0.036vw] flex-1"
         >
-          Ваши герои и лидер получают на 1<br /> меньше урона от атак
+          {heroInfo.leader.ability}
         </div>
       </div>
     </div>

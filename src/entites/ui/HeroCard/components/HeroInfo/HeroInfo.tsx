@@ -1,6 +1,6 @@
 import Image from "next/image";
 import s from "../../HeroCard.module.scss";
-import hero from "../../../../assets/pixelHero/AssassinPixel.png";
+//import hero from "../../../../assets/pixelHero/AssassinPixel.png";
 //import hero from "../../../../assets/pixelHero/MascotPixel.png";
 import attack from "../../../../assets/icons/Attack.png";
 import sheet from "../../../../assets/icons/Sheet.png";
@@ -9,6 +9,7 @@ import heroLabel from "../../../../assets/icons/heroLabel.png";
 // 👇 import local font
 import localFont from "next/font/local";
 import { PxToVw } from "@/app/utils";
+import { CardInfo } from "@/app/store/cardStore";
 
 //👇 Configure our local font object
 const pixelFontText = localFont({
@@ -18,13 +19,19 @@ const pixelFontNumber = localFont({
   src: "../../../../../../asset/Nineteen Ninety Three/Nineteen Ninety Three.otf",
 });
 
-export const HeroInfo = ({ scale = 1 }: { scale: number }) => {
+export const HeroInfo = ({
+  scale = 1,
+  heroInfo,
+}: {
+  scale: number;
+  heroInfo: CardInfo;
+}) => {
   return (
     <div
       style={{
         fontSize: `${PxToVw({ px: 24, scale: scale })}`,
         lineHeight: `${PxToVw({ px: 24, scale: scale })}`,
-        minHeight: `${PxToVw({ px: 70, scale: scale })}`,
+        maxHeight: `${PxToVw({ px: 70, scale: scale })}`,
       }}
       className={s.heroInfo}
     >
@@ -33,7 +40,7 @@ export const HeroInfo = ({ scale = 1 }: { scale: number }) => {
           height: `${PxToVw({ px: 66, scale: scale })}`,
           width: `${PxToVw({ px: 40, scale: scale })}`,
         }}
-        src={hero}
+        src={heroInfo.iconHero}
         alt="hero"
       />
       <div
@@ -58,7 +65,7 @@ export const HeroInfo = ({ scale = 1 }: { scale: number }) => {
               lineHeight: PxToVw({ px: 22, scale: scale }),
             }}
           >
-            Рыцарь
+            {heroInfo.hero.name}
           </span>
         </div>
         <div
@@ -85,7 +92,7 @@ export const HeroInfo = ({ scale = 1 }: { scale: number }) => {
               }}
               className="z-[2] text-[#CA2E21] white-text"
             >
-              3
+              {heroInfo.hero.attack}
             </span>
           </div>
           <div
@@ -108,7 +115,7 @@ export const HeroInfo = ({ scale = 1 }: { scale: number }) => {
               }}
               className="z-[2] text-[#24377D] white-text"
             >
-              10
+              {heroInfo.hero.sheet}
             </span>
           </div>
         </div>

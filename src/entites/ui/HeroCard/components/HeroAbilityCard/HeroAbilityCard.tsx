@@ -43,7 +43,15 @@ export const AbilityHeroCard = ({
       }}
       className={`${s.ability} ${styles[type] || ""}`}
     >
-      <div className={s.iconsAbility}>{iconsAbility}</div>
+      <div
+        style={{
+          fontSize: PxToVw({ px: 34, scale: scale }),
+          lineHeight: PxToVw({ px: 32, scale: scale }),
+        }}
+        className={s.iconsAbility}
+      >
+        {iconsAbility}
+      </div>
       {scale >= 1 && (
         <div
           style={{
